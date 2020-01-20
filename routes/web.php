@@ -27,6 +27,7 @@ Route::get("/kategori/{selflink}","front\cat\indexController@index")->name("cat"
 Route::get("/search","front\search\indexController@index")->name("search");
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 //ADMİN
 Route::group(["namespace" => "admin","prefix" => "admin","as" => "admin.","middleware" => ["auth","AdminCtrl"]],function(){
