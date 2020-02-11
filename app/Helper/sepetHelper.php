@@ -22,7 +22,12 @@ class sepetHelper{
         return collect($data)->sum("fiyat");
     }
     static function count(){
-        return count(Session::get("basket"));
+        if(empty(Session::get("basket"))){
+            return 0;
+        }else{
+            return count(Session::get("basket"));
+        }
+
     }
     static function remove($id){
         Session::forget("basket.".$id);
